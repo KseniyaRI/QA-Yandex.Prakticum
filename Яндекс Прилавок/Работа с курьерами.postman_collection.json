@@ -1,0 +1,816 @@
+{
+	"info": {
+		"_postman_id": "8a1e73d2-0f93-4ad6-9ea3-b5cf1771e639",
+		"name": "Работа с курьерами",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29109543"
+	},
+	"item": [
+		{
+			"name": "Корректное значение параметров",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Параметр \"Количество\" не передан в запросе",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Передано пустое значение параметра \"Количество\"",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount></productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Передан другой тип данных параметра \"Количество\" = a (string)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>a</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Количество\" со спец.символами = $",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>$</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отрицательное значение параметра \"Количество\" = -2",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>-2</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Количество\" от 0 до 7 (0,1,4,6,7)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>7</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Количество\" от 8 до 14 (8,9,11,13,14)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>14</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Количество\" от 15 до бесконечности (15,25)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>25</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Параметр \"Вес\" не передан в запросе",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Передано пустое значение параметра \"Вес\"",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight></productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Передан другой тип данных параметра \"Вес\" = a (string)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>a</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Вес\" со спец.символами = $",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>$</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отрицательное значение параметра \"Вес\" = -2",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>-2</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Вес\" с запятой = 5,5",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>5,5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Вес\" от 0 до 2,5 (0; 0,1; 1,5; 2,4; 2,5)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>2.5</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Вес\" от 2,6 до 6 (2,6; 2,7; 4; 5,9; 6)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>6</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Вес\" от 6,1 до бесконечности (6,1; 8)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>8</productsWeight>\n    <deliveryTime>14</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Параметр \"Время\" не передан в запросе",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>1.5</productsWeight>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Передано пустое значение параметра \"Время\"",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime></deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Передан другой тип данных параметра \"Время\" = a (string)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>a</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Время\" со спец.символами = #$",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>#$</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отрицательное значение параметра \"Время\" = -19",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>-19</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Время\" от 22 до 06 (22, 23, 00, 06)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>06</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Время\" от 07 до 21 (07, 08, 14, 20, 21)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>21</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Значение параметра \"Время\" = 63",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\n    <productsCount>4</productsCount>\n    <productsWeight>1.5</productsWeight>\n    <deliveryTime>63</deliveryTime>\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

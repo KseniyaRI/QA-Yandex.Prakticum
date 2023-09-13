@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "2783c32d-2b6e-4d31-88d9-cdc8be8eb6c2",
+		"name": "Создание корзины",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29109543"
+	},
+	"item": [
+		{
+			"name": "Создание корзины",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\": 4, \"quantity\": 1}, {\"id\": 1, \"quantity\": 1}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение количества товаров на складе",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ids\": [\n        1,\n        4\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/warehouses/amount",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"warehouses",
+						"amount"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

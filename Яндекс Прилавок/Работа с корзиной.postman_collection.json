@@ -1,0 +1,1208 @@
+{
+	"info": {
+		"_postman_id": "5250a048-43fe-41dd-aa44-553040650d20",
+		"name": "Работа с корзиной",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29109543"
+	},
+	"item": [
+		{
+			"name": "Получение списка продуктов без авторизации",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка продуктов с авторизацией",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "jknnFApafP4awfAIFfafam2fma",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка продуктов в корзине с несуществующим id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/5",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка продуктов в корзине с другим типом данных id = a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/a",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка продуктов в корзине без передачи id в ручке",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка продуктов в корзине с отрицательным значением id (-4)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "jknnFApafP4awfAIFfafam2fma",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/-4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"-4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка продуктов в корзине со значением id = #",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "jknnFApafP4awfAIFfafam2fma",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/#",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						""
+					],
+					"hash": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка продуктов в удаленной корзине",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "jknnFApafP4awfAIFfafam2fma",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в корзину с корректным id и списком продуктов",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":12,\"quantity\":1}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в корзину без передачи id в ручке",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":12,\"quantity\":1}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в корзину с несуществующим id (в URL)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":1,\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/102103",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"102103"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в корзину с другим типом данных id = a (в URL)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":1,\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/a",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в корзину с отрицательным значением id (в URL) = -3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":1,\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/-3",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"-3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в корзину со значением id = # (в URL)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":1,\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/#",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						""
+					],
+					"hash": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в корзину со значением пустой строки в productsList",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": \"\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в корзину с одним валидным объектом в productsList",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": {\"id\":12,\"quantity\":1}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в корзину с пустым массивом в productsList",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": []}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов без передачи их id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов с пустым значением id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\": \"\",\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов со значением id = \"12\"",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\": \"12\",\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов с несуществующими id = 102103",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":102103,\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов с другим типом данных id = a",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":a,\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов со значением id = 0",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":0,\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов с отрицательным значением id = -3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":-3,\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов со значением id = #",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":#,\"quantity\":4}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в корзину в большем количестве, чем есть в каждом из складов = 102104",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":12,\"quantity\":102104}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов без передачи их количества",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":1}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов с пустым значением количества",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":1,\"quantity\": \"\"}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов со значением количества = \"1\"",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":12,\"quantity\":\"1\"}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов с другим типом данных количества = a",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":1,\"quantity\":a}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов со значением количества = 0",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":1,\"quantity\":0}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов с отрицательным значением количества = -3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":1,\"quantity\":-3}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов со значением количества = #",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productsList\": [{\"id\":1,\"quantity\":#}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/4",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление корзины с существующим id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/2",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление корзины с несуществующим id = 102105",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/102105",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"102105"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление корзины с другим типом данных id = a",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/a",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление корзины без передачи id в ручке",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление корзины с отрицательным значением id = -3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/-3",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"-3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление корзины со значением id = #",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/v1/orders/#",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						""
+					],
+					"hash": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
