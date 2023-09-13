@@ -5,7 +5,7 @@
 
 Чек-листы некоторых проверок представлены на скриншотах, так как из-за особенностей доступа только кураторам обучения, нет возможности предоставить доступ к TMS. 
 
-Папка "Яндекс Прилавок" (веб-приложение)
+[Папка "Яндекс Прилавок"](https://github.com/KseniyaRI/QA-Yandex.Prakticum/tree/main/%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%9F%D1%80%D0%B8%D0%BB%D0%B0%D0%B2%D0%BE%D0%BA) (веб-приложение)
 1. В проекте "Яндекс Прилавок" тестировалось API функциональности продуктовой корзины с помощью Postman, необходимые URL располагались в Apidoc тестового стенда. Использованы запросы GET, POST, PUT и DELETE.
 2. Чек-лист с проверками и ссылками на каждую найденную ошибку - https://docs.google.com/spreadsheets/d/1j7DV8_AukeHYS-cP9Yr4EsGLNIiRO9Kya7yEQzT5aiU/edit?usp=sharing.
 3. Коллекции проверок из Postman выгружены в формате JSON - https://drive.google.com/file/d/1e0J7Hhn-TN_Yi3QPQbtD15GG-8LJR4dF/view?usp=sharing, https://drive.google.com/file/d/1tXFrr1UUY6kDsAZUpugxA87hlG9vnJM8/view?usp=sharing, https://drive.google.com/file/d/12HEsCR9grRbN9P2rNZM6U-9PhFa0UfFm/view?usp=sharing.
